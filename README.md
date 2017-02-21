@@ -6,6 +6,7 @@
 
 composer require guo/wechat:dev-master
 
+
 ## Register with config/app.php
 Register the service providers to enable the package:
 ```
