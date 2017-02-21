@@ -36,6 +36,8 @@ php artisan  vendor:publish --tag=admin-wechat
 设置用户表的信息
 ```
 
+
+
 ## 微信所需链接
 ```
 /api/wechat     微信响应接口
