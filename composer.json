@@ -1,12 +1,10 @@
 {
   "name": "tld/wechat",
-  "description": "wechat",
-  "version": "1.0.0",
-  "keywords": [
-    "laravel"
-  ],
+  "description": "",
+  "keywords": [],
+  "homepage": "",
   "license": "MIT",
-  "type": "library",
+  "version": "1.0.0",
   "authors": [
     {
       "name": "guo",
@@ -14,16 +12,15 @@
     }
   ],
   "require": {
-    "php": ">=5.3",
-    "laravelcollective/html": "*",
+    "php": ">=5.4.0",
+     "laravelcollective/html": "*",
     "overtrue/laravel-wechat": "~3.0",
     "predis/predis": "^1.1"
-  },
-  "require-dev": {
   },
   "autoload": {
     "psr-4": {
       "Tld\\Wechat\\": "app/"
     }
-  }
+  },
+  "minimum-stability": "dev"
 }
