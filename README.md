@@ -4,8 +4,7 @@
 
 # Installation
 
-composer require guo/wechat:dev-master
-
+composer require Tld/Wechat:dev-master
 
 ## Register with config/app.php
 Register the service providers to enable the package:
@@ -29,14 +28,10 @@ php artisan  vendor:publish --tag=admin-wechat
 ```
  "media",'wechat/upload','media/upload',"/api/wechat"
 ```
-
-
 ## Update  app\Newuser.php
 ```
 设置用户表的信息
 ```
-
-
 
 ## 微信所需链接
 ```
@@ -47,6 +42,7 @@ php artisan  vendor:publish --tag=admin-wechat
 /mass/index     正式群发
 /message        粉丝消息管理 
 /qrcode         生成二维码
+/template/list         模板消息设置
 
 ```
 
