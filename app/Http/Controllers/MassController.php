@@ -277,7 +277,10 @@ class MassController extends CommonController
             die;
         }
 
-        $validator = Validator::make($request->all(), [
+        $validator = Validator::make($request->all(),[
+            'userId' => 'required',
+            'text' => 'required',
+        ],[
             'userId.required' => '用户ID不可为空',
             'text.required' => '请输入文字',
 
