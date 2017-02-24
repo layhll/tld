@@ -205,10 +205,9 @@ class MediaController extends CommonController
                             'source_url' => $material->ORurl
                         ]);
                         $mixde_result = $app_material->uploadArticle($article);
-                       echo sprintf(config('wxconfig.redisKey.KEY_WEIXIN_MIXED'), $insert_id);
+                       sprintf(config('wxconfig.redisKey.KEY_WEIXIN_MIXED'), $insert_id);
                         Redis::set(sprintf(config('wxconfig.redisKey.KEY_WEIXIN_MIXED'), $insert_id), $mixde_result->media_id);
-                       echo Redis::get(sprintf(config('wxconfig.redisKey.KEY_WEIXIN_MIXED'), $insert_id));
-                    dd($insert_id,$mixde_result);
+                       Redis::get(sprintf(config('wxconfig.redisKey.KEY_WEIXIN_MIXED'), $insert_id));
                     } catch (Exception $e) {
 
                     }
@@ -260,8 +259,8 @@ class MediaController extends CommonController
                     $material->show_cover_in_text = $show_cover_in_text;
                     $material->upload_error = '';
                     $material->ORurl = '';
-                    $material->num = $request->num;
-                    $material->assist =  $request->assist;
+                    $material->num =  $form['num'];
+                    $material->assist = $form['assist'];
                     $material->link = $link;
                     $material->save();
                     $insert_id = $material->id;
@@ -467,8 +466,8 @@ class MediaController extends CommonController
                     $material->show_cover_in_text = $show_cover_in_text;
                     $material->upload_error = '';
                     $material->ORurl = '';
-                    $material->num = $request->num;
-                    $material->assist =  $request->assist;
+                    $material->num =  $form['num'];
+                    $material->assist = $form['assist'];
                     $material->link = $link;
                     $material->save();
                     if ($id == '0') {
@@ -477,31 +476,31 @@ class MediaController extends CommonController
 //                    $options = config("app.options");
 //                    $app = new Application($options);
                     // 永久素材
-                    $app_material = $this->wechat->material;
-
-                    $file_path = public_path($url['path']);
-                    try {
-
-                        $result = $app_material->uploadImage($file_path);  // 请使用绝对路径写法！除非你正确的理解了相对路径（好多人是没理解对的）！
-                        Redis::set(sprintf(config('wxconfig.redisKey.KEY_WEIXIN_MEDIA'), $id), $result['media_id']);
-                        //添加永久但图文素材
-                        $article = new Article([
-                            'title' => $title,
-                            'thumb_media_id' => $result['media_id'],
-                            'author' => $author,
-                            'digest' => $material->summary,
-                            'show_cover' => $show_cover_in_text,
-                            'content' => $content,
-                            'source_url' => $material->ORurl
-                        ]);
-                        $mediaId = Redis::GET(sprintf(config('wxconfig.redisKey.KEY_WEIXIN_MIXED_MULTI'), $bundle_id));
-                        if ($mediaId) {
-                            $app_material->updateArticle($mediaId, $article, $multi_order);
-                        }
-
-                    } catch (Exception $e) {
-
-                    }
+//                    $app_material = $this->wechat->material;
+//
+//                    $file_path = public_path($url['path']);
+//                    try {
+//
+//                        $result = $app_material->uploadImage($file_path);  // 请使用绝对路径写法！除非你正确的理解了相对路径（好多人是没理解对的）！
+//                        Redis::set(sprintf(config('wxconfig.redisKey.KEY_WEIXIN_MEDIA'), $id), $result['media_id']);
+//                        //添加永久但图文素材
+//                        $article = new Article([
+//                            'title' => $title,
+//                            'thumb_media_id' => $result['media_id'],
+//                            'author' => $author,
+//                            'digest' => $material->summary,
+//                            'show_cover' => $show_cover_in_text,
+//                            'content' => $content,
+//                            'source_url' => $material->ORurl
+//                        ]);
+//                        $mediaId = Redis::GET(sprintf(config('wxconfig.redisKey.KEY_WEIXIN_MIXED_MULTI'), $bundle_id));
+//                        if ($mediaId) {
+//                            $app_material->updateArticle($mediaId, $article, $multi_order);
+//                        }
+//
+//                    } catch (Exception $e) {
+//
+//                    }
                 }
                 echo json_encode(array());
                 exit;
