@@ -392,6 +392,9 @@ MMEditor.prototype.loadData = function(bundle_id, data) {
             show_cover_in_text: media.show_cover_in_text,
             media_delete:media.id,
             link:media.link,
+            assist:media.assist,
+            num:media.num
+
         });
         if (k==0) {
             self.preview_list.append('<li class="list-group-item"><div class="text-cneter preview_box head_preview_box"><div class="preview_title">'+media.title+'</div><div class="preview_cover text-center"><img src="'+media.media_url+'"></div><div class="clearfix"></div></div></li>');
