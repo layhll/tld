@@ -23,10 +23,27 @@
                     <div class="box-body">
                         <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
                     <form class="form-inline" role="form" method="get" id="frmSearch">
-                        
-                     
-                        <div class="form-group">
+
+
+
+                        <div class="form-group col-sm-2">
                             <input type="text" name="nickname" class="form-control input-sm" style="width:9em" placeholder="请输入昵称">
+                        </div>&nbsp;
+                        <div class="form-group col-sm-2" >
+                            <label class="radio-inline">
+                                <input type="radio" name="sex" id="sex1" value="1"> 男
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="sex" id="sex2" value="2"> 女
+                            </label>
+                        </div>
+                        <div class="form-group col-sm-2">
+                            <label class="radio-inline">
+                                <input type="radio" name="status" id="status1" value="1"> 关注
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="status" id="status0" value="0"> 取关
+                            </label>
                         </div>&nbsp;
                         <input type="submit" class="btn  btn-success" value="搜索">&nbsp;
                         <a href="/ad_user/index" class="btn  btn-primary">重置搜索条件</a>
@@ -40,14 +57,19 @@
     <script>
         
         $(function(){
-            
             var search = location.search.substring(1);
             if (search) {
                 try {
                     var query = JSON.parse('{"' + decodeURIComponent(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}');
 
                     $.each(query, function(k, v) {
-                        $('[name=' + k + ']').val(v);
+//                        console.log(k,v);
+                        if(k=='nickname'){
+                            $('[name=' + k + ']').val(v);
+                        }else{
+                            $("#"+k+v).attr("checked",true);
+                        }
+
                     });
                 } catch (e) {
                     console.log(e);
@@ -97,9 +119,14 @@
                                                 头像
                                             </th>
                                             <th class="sorting col-sm-2" aria-controls="example2" rowspan="1"
+                                                       colspan="1"
+                                                       aria-label="Engine version: activate to sort column ascending">
+                                                openid
+                                            </th>
+                                            <th class="sorting col-sm-2" aria-controls="example2" rowspan="1"
                                                 colspan="1"
                                                 aria-label="Engine version: activate to sort column ascending">
-                                                openid
+                                                性别
                                             </th>
                                             <th class="sorting col-sm-2" aria-controls="example2" rowspan="1"
                                                 colspan="1"
@@ -126,8 +153,9 @@
                                                 <td>{{$value->nickname}}</td>
                                                 <td><img src="{{$value->avatar}}" alt="" width="50px"></td>
                                                 <td>{{$value->openid}}</td>
+                                                <td>{{$value->sex=='1'?'男':'女'}}</td>
                                                 <td>{{$value->created}}</td>
-                                                <td><a href="/masstest?userID={{$value->user_id}}">测试群发</a></td>
+                                                <td><a href="/mass/test?userID={{$value->user_id}}">测试群发</a></td>
 
                                             </tr>
                                         @endforeach
@@ -135,13 +163,11 @@
                                     </table>
                                 </div>
                             </div>
-                            @include("layout.page",['paginator'=>$list])
+                            @include("wechat::pagination.tfoot",['paginator'=>$list])
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <script src="{{url("/bower_components/AdminLTE/plugins/iCheck/icheck.min.js")}}"></script>
-    <script src="{{url("/bower_components/AdminLTE/plugins/iCheck/icheck.js")}}"></script>
 @endsection

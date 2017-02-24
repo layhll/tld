@@ -111,7 +111,7 @@
                                         </div>
                                         <div class="form-group col-sm-12"
                                              style="padding-left: 0;margin-bottom: 15px">
-                                            <input type="submit" value="测试群发" 
+                                            <input type="submit" value="测试群发"
                                                    name="resubmit"
                                                    class="btn btn-primary"/>
                                         </div>
