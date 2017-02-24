@@ -3,18 +3,19 @@
 namespace Tld\Wechat\Http\Controllers;
 
 
+use App\User_sub;
 use Tld\Wechat\Jobs\Sendkefu;
 use Tld\Wechat\Jobs\SendTemp;
 use Illuminate\Http\Request;
 use Tld\Wechat\Model\MassLog;
 use Tld\Wechat\Model\Media;
-use Tld\Wechat\Model\UserSns;
+use Tld\Wechat\Model\UserSns as User_sns;
 use Validator;
 use DB;
 use Exception;
 use WechatToken;
 use Illuminate\Support\Facades\Redis;
-use App\Newuser as User;
+use App\User;
 use EasyWeChat\Message\Text;
 use EasyWeChat\Message\Material;
 
@@ -293,7 +294,7 @@ class MassController extends CommonController
 
         } else {
             try {
-                $user = User::where("id", $userid)->first(['openid']);
+                $user =  User_sns::where("user_id", $userid)->first(['openid']);
                 $openid = $user->openid;
             } catch (Exception $e) {
                 return redirect('/mass/test')
@@ -363,7 +364,7 @@ class MassController extends CommonController
 
         } else {
             try {
-                $user = User::where("id", $userid)->first(['openid']);
+                $user =  User_sns::where("user_id", $userid)->first(['openid']);
                 $openid = $user->openid;
             } catch (Exception $e) {
                 return redirect('/mass/test')
@@ -442,7 +443,7 @@ class MassController extends CommonController
 
         } else {
             try {
-                $user = User::where("id", $userid)->first(['openid']);
+                $user = User_sns::where("user_id", $userid)->first(['openid']);
                 $openid = $user->openid;
             } catch (Exception $e) {
                 return redirect('/mass/test')
@@ -498,7 +499,7 @@ class MassController extends CommonController
         );
 
         if (!empty($request->userId)) {
-            $userdata = User::select("openid")->where("user_id", $request->userId)->get()->toarray();
+            $userdata = User_sns::select("openid")->where("user_id", $request->userId)->get()->toarray();
             $messtype = "测试群发";
             $msgid = "测试无消息id";
             $receiver = "openid:" . $request->userId;

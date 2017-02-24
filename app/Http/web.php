@@ -10,7 +10,7 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-Route::group(['middleware' =>config("wxconfig.middleware")], function () {
+Route::group(['middleware' => config("wxconfig.middleware")], function () {
     Route::group(['prefix' => config("wxconfig.prefix")], function () {
         Route::group(['namespace' => '\Tld\Wechat\Http\Controllers'], function () {
 

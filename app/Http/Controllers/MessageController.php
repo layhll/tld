@@ -4,7 +4,7 @@ namespace Tld\Wechat\Http\Controllers;
 
 
 use Tld\Wechat\Model\Message;
-use App\Newuser as User;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -23,9 +23,6 @@ class MessageController extends CommonController
 
     public function index(Request $request)
     {
-        $key = User::$key;
-        $table = User::$tables;
-        $nickname= User::$nickname;
         $where = array();
         $like = array();
         $msg_type = $request->msg_type;
@@ -61,7 +58,7 @@ class MessageController extends CommonController
             $where[] = array("message.created", ">=", date('Y-m-d 00:00:00', strtotime($day)));
             $where[] = array("message.created", "<=", date('Y-m-d 23:59:59', strtotime($day)));
         }
-        $list = User::where($where)->rightjoin("message", $table . "." . $key, "=", "message.from_user_name")->orderBy('message.id', 'desc')->paginate(20);
+        $list = User::where($where)->join("user_sns","user_sns.user_id","=","users.id")->rightjoin("message",  'user_sns.openid', "=", "message.from_user_name")->orderBy('message.id', 'desc')->paginate(20);
         $append = array();
         $re = $request->toArray();
         foreach ($re as $key => $value) {
