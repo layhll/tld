@@ -68,7 +68,9 @@ class MassController extends CommonController
             echo 'Please select test send to group';
             die;
         }
-        $validator = Validator::make($request->all(), [
+        $validator = Validator::make($request->all(),[
+            'text' => 'required',
+        ], [
             'text.required' => '请输入文字',
 
         ]);
@@ -134,7 +136,9 @@ class MassController extends CommonController
             echo 'Please select test send to group';
             die;
         }
-        $validator = Validator::make($request->all(), [
+        $validator = Validator::make($request->all(),[
+            'media_id' => 'required',
+        ], [
             'media_id.required' => '请选择一张图片',
         ]);
         if ($validator->fails()) {
@@ -198,7 +202,9 @@ class MassController extends CommonController
             echo 'Please select test send to group';
             die;
         }
-        $validator = Validator::make($request->all(), [
+        $validator = Validator::make($request->all(),[
+            'media_id' => 'required',
+        ], [
             'media_id.required' => '请选择一个图文素材',
         ]);
         if ($validator->fails()) {
@@ -349,7 +355,10 @@ class MassController extends CommonController
             die;
         }
 
-        $validator = Validator::make($request->all(), [
+        $validator = Validator::make($request->all(),[
+            'userId' => 'required',
+            'media_id' => 'required',
+        ], [
             'userId.required' => '用户ID不可为空',
             'media_id.required' => '请选择一张图片',
 
@@ -417,7 +426,10 @@ class MassController extends CommonController
             die;
         }
 
-        $validator = Validator::make($request->all(), [
+        $validator = Validator::make($request->all(),[
+            'userId' => 'required',
+            'media_id' => 'required',
+        ], [
             'userId.required' => '用户ID不可为空',
             'media_id.required' => '请选择一个图文素材',
 
