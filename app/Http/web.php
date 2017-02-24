@@ -20,6 +20,11 @@ Route::group(['middleware' => config("wxconfig.middleware")], function () {
             Route::get('file', 'HomeController@getcontent');
             Route::get('delfile', 'HomeController@delfile');
             Route::get('test', 'HomeController@test');
+
+            //用户管理
+            Route::get('/ad_user/index', 'UserController@index');
+
+
             //微信接口
             Route::any('/api/wechat', 'Api\WechatController@api');
             //详情页

@@ -45,8 +45,8 @@
                                     <label class="col-sm-2 control-label"
                                            style="height:34px;line-height:34px;margin-bottom: 0;padding-left:0px">userid</label>
                                     <div class="col-sm-10">
-                                        <input name="userId" type="text" value="{{$userID or old('userId')}}"
-                                               placeholder="请输入userid" class=" form-control" size="30">
+                                        <input name="userId" required type="text" value="{{$userID or old('userId')}}"
+                                               placeholder="请输入userid" class=" form-control  text-userid" size="30">
                                     </div>
                                 </div>
                             </h3>
@@ -63,9 +63,9 @@
                                             <div class="form-group col-sm-12" style="padding-left: 0">
                                                 <textarea name="text" rows="20" class="form-control"
                                                           placeholder="请输入文字">{{ old('text') }}</textarea>
-                                                <input type="submit" value="测试群发" onclick="return confirm('确定要群发?')"
+                                                <input type="submit" value="测试群发"
                                                        name="resubmit"
-                                                       class="btn btn-primary"/>
+                                                       class="btn btn-primary btnsubmit"/>
                                             </div>
                                         </div>
                                     </div>
@@ -88,7 +88,7 @@
                                     <label class="col-sm-2 control-label"
                                            style="height:34px;line-height:34px;margin-bottom: 0;padding-left:0px">userid</label>
                                     <div class="col-sm-10">
-                                        <input name="userId" type="text" value="{{$userID or old('userId')}}"
+                                        <input name="userId"  required type="text" value="{{$userID or old('userId')}}"
                                                placeholder="请输入userid" class=" form-control" size="30">
                                     </div>
                                 </div>
@@ -111,7 +111,7 @@
                                         </div>
                                         <div class="form-group col-sm-12"
                                              style="padding-left: 0;margin-bottom: 15px">
-                                            <input type="submit" value="测试群发" onclick="return confirm('确定要群发?')"
+                                            <input type="submit" value="测试群发" 
                                                    name="resubmit"
                                                    class="btn btn-primary"/>
                                         </div>
@@ -140,7 +140,7 @@
                                     <label class="col-sm-2 control-label"
                                            style="height:34px;line-height:34px;margin-bottom: 0;padding-left:10px">userid</label>
                                     <div class="col-sm-10">
-                                        <input name="userId" type="text" value="{{$userID or old('userId')}}"
+                                        <input name="userId" required type="text" value="{{$userID or old('userId')}}"
                                                placeholder="请输入userid" class=" form-control" size="30">
                                     </div>
                                 </div>
@@ -159,7 +159,7 @@
                                     {{--</select>--}}
                                 </div>
                                 <div class="form-group col-sm-12" style="padding-bottom: 0">
-                                    <input type="submit" value="测试群发" name="resubmit" onclick="return confirm('确定要群发?')"
+                                    <input type="submit" value="测试群发" name="resubmit"
                                            class="btn btn-primary"/>
                                 </div>
                             </div>
@@ -187,7 +187,7 @@
                                                 <label class="col-sm-2 control-label"
                                                        style="height:34px;line-height:34px;margin-bottom: 0;padding-left:10px">userid</label>
                                                 <div class="col-sm-10">
-                                                    <input name="userId" type="text" value="{{$userID or old('userId')}}"
+                                                    <input name="userId"required type="text" value="{{$userID or old('userId')}}"
                                                            placeholder="请输入userid" class=" form-control" size="30">
                                                 </div>
                                             </div>
@@ -240,7 +240,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group col-sm-12" style="padding-bottom: 0">
-                                            <input type="submit" value="群发" onclick="return confirm('确定要群发?')"
+                                            <input type="submit" value="群发"
                                                    name="resubmit"
                                                    class="btn btn-primary"/>
                                         </div>
@@ -267,7 +267,7 @@
                                     <label class="col-sm-2 control-label"
                                            style="height:34px;line-height:34px;margin-bottom: 0;padding-left:0px">userid</label>
                                     <div class="col-sm-10">
-                                        <input name="userId" type="text" value="{{$userID or old('userId')}}"
+                                        <input name="userId"  required type="text" value="{{$userID or old('userId')}}"
                                                placeholder="请输入userid" class=" form-control" size="30">
                                     </div>
                                 </div>
@@ -287,7 +287,7 @@
                                     {{ Form::select('media_id', $mediaskf,['class'=>'form-control selectpicker show-tick','data-style'=>"btn-info"]) }}
                                 </div>
                                 <div class="form-group col-sm-12" style="padding-bottom: 0">
-                                    <input type="submit" value="测试群发" name="resubmit" onclick="return confirm('确定要群发?')"
+                                    <input type="submit" value="测试群发" name="resubmit"
                                            class="btn btn-primary"/>
                                 </div>
                             </div>
@@ -389,6 +389,10 @@
     </section>
     <script>
         $(function () {
+            
+            $(".btnsubmit").click(function () {
+               confirm("11");
+            });
             $(".picture").hide();
             $(".picturetext").hide();
             $(".pretemplate").hide();

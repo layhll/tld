@@ -25,8 +25,8 @@ class UserController extends AdminController
         if(isset($status)){
             $where[]=array("status"=>$status);
         }
-        $list = User::join("user_sns", "user_sns.user_id", "=", "users.id")->paginate(20);
+        $list = User::join("user_sns", "user_sns.user_id", "=", "users.id")->where($where)->paginate(20);
         
-        return view("user.index", ['list' => $list, 'i' => 1]);
+        return view("wechat::user.index", ['list' => $list, 'i' => 1]);
     }
 }
