@@ -430,7 +430,7 @@
                                 str = str + ' <div class="box-header with-border box-danger form-group tepmlate-keys">' +
                                         '<label class="col-sm-2 control-label right-lable">' + data["vice"][i].value + ':</label>' +
                                         '<div class="col-sm-4">' +
-                                        '<input name="data[' + data["vice"][i].key + ']" type="text" value="" placeholder="请输入值" class=" form-control" required size="30"> ' +
+                                        '<input name="data[' + data["vice"][i].key + ']" type="text" value="" placeholder="请输入值" class=" form-control" > ' +
                                         '</div>' +
                                         '</div>';
                             }
