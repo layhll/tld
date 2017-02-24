@@ -155,13 +155,13 @@
                                                         </select>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="mixedAuthor">阅读数量（选填）</label>
-                                                        <input type="text" class="form-control" id="num"
+                                                        <label for="num">阅读数量（选填）</label>
+                                                        <input type="number" class="form-control" id="num"
                                                                name="num">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="mixedAuthor">点赞数量（选填）</label>
-                                                        <input type="text" class="form-control" id="assist"
+                                                        <label for="assist">点赞数量（选填）</label>
+                                                        <input type="number" class="form-control" id="assist"
                                                                name="assist">
                                                     </div>
                                                     <input type="submit" class="btn btn-primary btn-sm" value="保存">
@@ -279,13 +279,13 @@
                                                             </select>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="mixedAuthor">阅读数量（选填）</label>
-                                                            <input type="text" class="form-control" id="num"
+                                                            <label for="num">阅读数量（选填）</label>
+                                                            <input type="number" class="form-control" id="num"
                                                                    name="num">
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="mixedAuthor">点赞数量（选填）</label>
-                                                            <input type="text" class="form-control" id="assist"
+                                                            <label for="assist">点赞数量（选填）</label>
+                                                            <input type="number" class="form-control" id="assist"
                                                                    name="assist">
                                                         </div>
                                                     </form>
@@ -335,12 +335,12 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="mixedAuthor">阅读数量（选填）</label>
-                                                        <input type="text" class="form-control" id="num"
+                                                        <input type="number" class="form-control" id="num"
                                                                name="num">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="mixedAuthor">点赞数量（选填）</label>
-                                                        <input type="text" class="form-control" id="assist"
+                                                        <input type="number" class="form-control" id="assist"
                                                                name="assist">
                                                     </div>
                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -424,12 +424,12 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="mixedAuthor">阅读数量（选填）</label>
-                                                        <input type="text" class="form-control" id="num"
+                                                        <input type="number" class="form-control" id="num"
                                                                name="num">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="mixedAuthor">点赞数量（选填）</label>
-                                                        <input type="text" class="form-control" id="assist"
+                                                        <input type="number" class="form-control" id="assist"
                                                                name="assist">
                                                     </div>
                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -458,14 +458,14 @@
                                             </div>
                                             <textarea class="form-control" name="content" rows='3' cols="50"></textarea>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group" style="display: none;">
                                             <label for="mixedAuthor">阅读数量（选填）</label>
-                                            <input type="text" class="form-control" id="num"
+                                            <input type="number" class="form-control" id="num"
                                                    name="num">
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group"  style="display: none;">
                                             <label for="mixedAuthor">点赞数量（选填）</label>
-                                            <input type="text" class="form-control" id="assist"
+                                            <input type="number" class="form-control" id="assist"
                                                    name="assist">
                                         </div>
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
