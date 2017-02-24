@@ -154,6 +154,16 @@
                                                             @endforeach
                                                         </select>
                                                     </div>
+                                                    <div class="form-group">
+                                                        <label for="mixedAuthor">阅读数量（选填）</label>
+                                                        <input type="text" class="form-control" id="num"
+                                                               name="num">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="mixedAuthor">点赞数量（选填）</label>
+                                                        <input type="text" class="form-control" id="assist"
+                                                               name="assist">
+                                                    </div>
                                                     <input type="submit" class="btn btn-primary btn-sm" value="保存">
                                                 </form>
                                             </div>
@@ -268,6 +278,16 @@
                                                                 @endforeach
                                                             </select>
                                                         </div>
+                                                        <div class="form-group">
+                                                            <label for="mixedAuthor">阅读数量（选填）</label>
+                                                            <input type="text" class="form-control" id="num"
+                                                                   name="num">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="mixedAuthor">点赞数量（选填）</label>
+                                                            <input type="text" class="form-control" id="assist"
+                                                                   name="assist">
+                                                        </div>
                                                     </form>
                                                 </div>
                                             </div>
@@ -312,6 +332,16 @@
                                                         <label for="imageTitle">标题</label>
                                                         <input type="text" class="form-control" id="imageTitle"
                                                                name="title">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="mixedAuthor">阅读数量（选填）</label>
+                                                        <input type="text" class="form-control" id="num"
+                                                               name="num">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="mixedAuthor">点赞数量（选填）</label>
+                                                        <input type="text" class="form-control" id="assist"
+                                                               name="assist">
                                                     </div>
                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                     <input type="submit" class="btn btn-primary btn-sm" value="保存">
@@ -392,6 +422,16 @@
                                                         <textarea class="form-control" name="content" rows='3'
                                                                   placeholder=""></textarea>
                                                     </div>
+                                                    <div class="form-group">
+                                                        <label for="mixedAuthor">阅读数量（选填）</label>
+                                                        <input type="text" class="form-control" id="num"
+                                                               name="num">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="mixedAuthor">点赞数量（选填）</label>
+                                                        <input type="text" class="form-control" id="assist"
+                                                               name="assist">
+                                                    </div>
                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                     <input type="submit" class="btn btn-primary btn-sm" value="保存">
                                                 </form>
@@ -417,6 +457,16 @@
                                                 ?>
                                             </div>
                                             <textarea class="form-control" name="content" rows='3' cols="50"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="mixedAuthor">阅读数量（选填）</label>
+                                            <input type="text" class="form-control" id="num"
+                                                   name="num">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="mixedAuthor">点赞数量（选填）</label>
+                                            <input type="text" class="form-control" id="assist"
+                                                   name="assist">
                                         </div>
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="submit" class="btn btn-primary btn-sm" value="保存">

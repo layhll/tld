@@ -100,8 +100,8 @@ class MediaController extends CommonController
                 $material->show_cover_in_text = '0';
                 $material->upload_error = '';
                 $material->ORurl = '';
-                $material->num = '0';
-                $material->assist = '0';
+                $material->num = $request->num;
+                $material->assist =  $request->assist;
                 $material->save();
 
                 return $material->id;
@@ -130,8 +130,8 @@ class MediaController extends CommonController
                 $material->show_cover_in_text = '0';
                 $material->upload_error = '';
                 $material->ORurl = '';
-                $material->num = '0';
-                $material->assist = '0';
+                $material->num = $request->num;
+                $material->assist =  $request->assist;
                 $material->save();
                 $insert_id = $material->id;
                 if ($insert_id > 0) {
@@ -181,8 +181,8 @@ class MediaController extends CommonController
                 $material->show_cover_in_text = $show_cover_in_text;
                 $material->upload_error = '';
                 $material->ORurl = '';
-                $material->num = '0';
-                $material->assist = '0';
+            $material->num = $request->num;
+            $material->assist =  $request->assist;
                 $material->link = $link;
                 $material->save();
                 $insert_id = $material->id;
@@ -260,8 +260,8 @@ class MediaController extends CommonController
                     $material->show_cover_in_text = $show_cover_in_text;
                     $material->upload_error = '';
                     $material->ORurl = '';
-                    $material->num = '0';
-                    $material->assist = '0';
+                    $material->num = $request->num;
+                    $material->assist =  $request->assist;
                     $material->link = $link;
                     $material->save();
                     $insert_id = $material->id;
@@ -325,8 +325,8 @@ class MediaController extends CommonController
                 $material->show_cover_in_text = ' ';
                 $material->upload_error = '';
                 $material->ORurl = '';
-                $material->num = '';
-                $material->assist = '';
+                $material->num = $request->num;
+                $material->assist =  $request->assist;
                 return $material->save();
                 break;
             case MEDIA_TYPE_IMAGE:
@@ -347,8 +347,8 @@ class MediaController extends CommonController
                 $material->show_cover_in_text = ' ';
                 $material->upload_error = '';
                 $material->ORurl = '';
-                $material->num = '';
-                $material->assist = '';
+                $material->num = $request->num;
+                $material->assist =  $request->assist;
                 $material->save();
 
                 $file_path = public_path($url['path']);
@@ -395,8 +395,8 @@ class MediaController extends CommonController
                 $material->upload_error = '';
                 $material->ORurl = '';
                 $material->link = $link;
-                $material->num = '';
-                $material->assist = '';
+            $material->num = $request->num;
+            $material->assist =  $request->assist;
 //                $options = config("app.options");
 //                $app = new Application($options);
                 // 永久素材
@@ -467,8 +467,8 @@ class MediaController extends CommonController
                     $material->show_cover_in_text = $show_cover_in_text;
                     $material->upload_error = '';
                     $material->ORurl = '';
-                    $material->num = '';
-                    $material->assist = '';
+                    $material->num = $request->num;
+                    $material->assist =  $request->assist;
                     $material->link = $link;
                     $material->save();
                     if ($id == '0') {
