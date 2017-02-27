@@ -103,7 +103,7 @@
                                                 {{--aria-label="Rendering engine: activate to sort column descending">--}}
                                                 {{--id--}}
                                             {{--</th>--}}
-                                            <th class="sorting col-sm-2" aria-controls="example2" rowspan="1"
+                                            <th class="sorting col-sm-1" aria-controls="example2" rowspan="1"
                                                 colspan="1"
                                                 aria-label="Browser: activate to sort column ascending">
                                                 userID
@@ -113,7 +113,7 @@
                                                 aria-label="Browser: activate to sort column ascending">
                                                 昵称
                                             </th>
-                                            <th class="sorting col-sm-2" aria-controls="example2" rowspan="1"
+                                            <th class="sorting col-sm-1" aria-controls="example2" rowspan="1"
                                                 colspan="1"
                                                 aria-label="Platform(s): activate to sort column ascending">
                                                 头像
@@ -123,7 +123,7 @@
                                                        aria-label="Engine version: activate to sort column ascending">
                                                 openid
                                             </th>
-                                            <th class="sorting col-sm-2" aria-controls="example2" rowspan="1"
+                                            <th class="sorting col-sm-1" aria-controls="example2" rowspan="1"
                                                 colspan="1"
                                                 aria-label="Engine version: activate to sort column ascending">
                                                 性别
