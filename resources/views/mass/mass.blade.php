@@ -38,18 +38,17 @@
                 <form action="/mass/presendtext" method="post" name="mass" id="mass">
                     {{ csrf_field()}}
                     <div class="box">
-                        <div class="box-header with-border box-danger">
-                            <h3 class="box-title"><label for='test'></label> <input type='hidden' name='select'
+                        <div >
+                           <label for='test'></label> <input type='hidden' name='select'
                                                                                     value='test' id='tset'>
-                                <div class="box-header with-border box-danger form-group">
-                                    <label class="col-sm-2 control-label"
-                                           style="height:34px;line-height:34px;margin-bottom: 0;padding-left:0px">userid</label>
-                                    <div class="col-sm-10">
+                                <div class="form-group row">
+                                    <label class="col-sm-1 control-label right-lable" >userid</label>
+                                    <div class="col-sm-8">
                                         <input name="userId" required type="text" value="{{$userID or old('userId')}}"
-                                               placeholder="请输入userid" class=" form-control  text-userid" size="30">
+                                               placeholder="请输入userid" class=" form-control" size="30">
                                     </div>
                                 </div>
-                            </h3>
+
                         </div>
                         <div class="box-body">
                             <div id="example2_wrapper" class="dataTables_wrapper  dt-bootstrap">
@@ -63,11 +62,12 @@
                                             <div class="form-group col-sm-12" style="padding-left: 0">
                                                 <textarea name="text" rows="20" class="form-control"
                                                           placeholder="请输入文字">{{ old('text') }}</textarea>
-                                                <input type="submit" value="测试群发"
-                                                       name="resubmit"
-                                                       class="btn btn-primary btnsubmit"/>
+
                                             </div>
                                         </div>
+                                        <input type="submit" value="测试群发"
+                                               name="resubmit"
+                                               class="btn btn-primary btnsubmit"/>
                                     </div>
                                 </div>
                             </div>
@@ -81,18 +81,17 @@
                 <form action="/mass/presendpicture" method="post" name="masspicture" id="mass">
                     <input type="hidden" name="media_id" id="media_id" value="">
                     <div class="box">
-                        <div class="box-header with-border box-danger">
-                            <h3 class="box-title"><label for='test'></label>
+                        <div >
+                            <label for='test'></label>
                                 <input type='hidden' name='select' value='test' id='tset'>
-                                <div class="box-header with-border box-danger form-group">
-                                    <label class="col-sm-2 control-label"
-                                           style="height:34px;line-height:34px;margin-bottom: 0;padding-left:0px">userid</label>
-                                    <div class="col-sm-10">
-                                        <input name="userId"  required type="text" value="{{$userID or old('userId')}}"
+                                <div class="form-group row">
+                                    <label class="col-sm-1 control-label right-lable" >userid</label>
+                                    <div class="col-sm-8">
+                                        <input name="userId" required type="text" value="{{$userID or old('userId')}}"
                                                placeholder="请输入userid" class=" form-control" size="30">
                                     </div>
                                 </div>
-                            </h3>
+
                         </div>
                         <div class="box-body">
                             <div id="example2_wrapper" class="dataTables_wrapper  dt-bootstrap">
@@ -100,7 +99,7 @@
                                     <div class="col-sm-12">
                                         {{ csrf_field()}}
                                         <div class="form-group row">
-                                            <label class="col-md-2 control-label">缩略图</label>
+                                            <label class="col-md-1 control-label right-lable">缩略图</label>
                                             <div class="col-md-4 thumb-wrap">
                                                 <div class="pic-upload btn btn-block btn-info btn-flat"
                                                      title="点击上传">点击上传
@@ -133,32 +132,37 @@
                 <form action="/mass/presendpicturetext" method="post" name="masspicturetext" id="mass">
                     <input type="hidden" name="media_id" id="media_id" value="">
                     <div class="box">
-                        <div class="box-header with-border box-danger" style="padding: 0">
-                            <h3 class="box-title"><label for='test'></label>
+                        <div  style="padding: 0">
+                           <label for='test'></label>
                                 <input type='hidden' name='select' value='test' id='tset'>
-                                <div class="box-header with-border box-danger form-group">
-                                    <label class="col-sm-2 control-label"
-                                           style="height:34px;line-height:34px;margin-bottom: 0;padding-left:10px">userid</label>
-                                    <div class="col-sm-10">
+                                <div class="form-group row">
+                                    <label class="col-sm-1 control-label right-lable" >userid</label>
+                                    <div class="col-sm-8">
                                         <input name="userId" required type="text" value="{{$userID or old('userId')}}"
                                                placeholder="请输入userid" class=" form-control" size="30">
                                     </div>
                                 </div>
-                            </h3>
-                            <div class="form-group">
+                                {{--<div class="box-header with-border box-danger form-group">--}}
+                                    {{--<label class="col-sm-1 control-label"--}}
+                                          {{-->userid</label>--}}
+                                    {{--<div class="col-sm-10">--}}
+                                        {{--<input name="userId" required type="text" value="{{$userID or old('userId')}}"--}}
+                                               {{--placeholder="请输入userid" class=" form-control" size="30">--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            <div class="form-group row">
                                 {{ csrf_field()}}
-                                <label class="col-sm-1 control-label"
-                                       style="margin-bottom: 0;padding-left:15px">选择图文</label>
+                                <label class="col-sm-1 control-label right-lable"
+                                       >选择图文</label>
                                 <div class="col-sm-8">
-                                    {{ Form::select('media_id', $medias,['class'=>'form-control selectpicker show-tick','data-style'=>"btn-info"]) }}
-                                    {{--<select id="usertype" name="media_id" class="selectpicker show-tick form-control"  data-style="btn-info">--}}
-                                    {{--@foreach($res as $key=>$value){--}}
-                                    {{--<option value="{{$key}}#{{$value}}">{{$value}}</option>--}}
-                                    {{--}--}}
-                                    {{--@endforeach--}}
-                                    {{--</select>--}}
+                                    {{ Form::select('media_id', $medias,"",['class'=>'form-control selectpicker show-tick','data-style'=>"btn-info"]) }}
                                 </div>
-                                <div class="form-group col-sm-12" style="padding-bottom: 0">
+                            </div>
+                            <div class="form-group row">
+
+                                <label class="col-sm-1 control-label right-lable"
+                                ></label>
+                                <div class="col-sm-8" style="margin-bottom: 20px;">
                                     <input type="submit" value="测试群发" name="resubmit"
                                            class="btn btn-primary"/>
                                 </div>
@@ -181,18 +185,13 @@
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="box-header with-border box-danger form-group">
-                                        <h3 class="box-title"><label for='test'></label>
-                                            <input type='hidden' name='select' value='test' id='tset'>
-                                            <div class="box-header with-border box-danger form-group">
-                                                <label class="col-sm-2 control-label"
-                                                       style="height:34px;line-height:34px;margin-bottom: 0;padding-left:10px">userid</label>
-                                                <div class="col-sm-10">
-                                                    <input name="userId"required type="text" value="{{$userID or old('userId')}}"
-                                                           placeholder="请输入userid" class=" form-control" size="30">
-                                                </div>
+                                            <label class="col-sm-2 control-label right-lable"
+                                                   style="height:34px;line-height:34px;margin-bottom: 0;padding-left:0px">userid:</label>
+                                            <div class="col-sm-10">
+                                                <input name="userId"required type="text" value="{{$userID or old('userId')}}"
+                                                       placeholder="请输入userid" class=" form-control" size="30">
                                             </div>
-                                        </h3>
-                                            </div>
+                                        </div>
                                         <div class="box-header with-border box-danger form-group">
                                             <label class="col-sm-2 control-label right-lable"
                                                    style="height:34px;line-height:34px;margin-bottom: 0;padding-left:0px">选择模板:</label>
@@ -260,38 +259,43 @@
                     {{ csrf_field() }}
                     <div class="box">
                         <div class="box-header with-border box-danger form-group">客服消息接受者必需在28小时内与公众号沟通过才能接收到消息</div>
-                        <div class="box-header with-border box-danger">
-                            <h3 class="box-title"><label for='test'></label>
+                        <div class="box-header with-border box-danger form-group">
+                           <label for='test'></label>
                                 <input type='hidden' name='select' value='test' id='tset'>
-                                <div class="box-header with-border box-danger form-group">
-                                    <label class="col-sm-2 control-label"
-                                           style="height:34px;line-height:34px;margin-bottom: 0;padding-left:0px">userid</label>
-                                    <div class="col-sm-10">
-                                        <input name="userId"  required type="text" value="{{$userID or old('userId')}}"
-                                               placeholder="请输入userid" class=" form-control" size="30">
-                                    </div>
+                            <div class="form-group row">
+                                <label class="col-sm-1 control-label right-lable" >userid</label>
+                                <div class="col-sm-8">
+                                    <input name="userId" required type="text" value="{{$userID or old('userId')}}"
+                                           placeholder="请输入userid" class=" form-control" size="30">
                                 </div>
-                            </h3>
-                            <div class="form-group">
-                                <label class="col-sm-1 control-label"
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-1 control-label right-lable"
                                        style="margin-bottom: 0;padding-left:15px">文本消息</label>
                                 <div class="col-sm-8">
                                     <textarea name="text" class=" form-control"></textarea>
                                 </div>
                             </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-1 control-label right-lable"
+                                      >选择消息</label>
+                                <div class="col-sm-8 aselect">
+                                    {{ Form::select('media_id', $mediaskf,"",['class'=>'form-control selectpicker show-tick','data-style'=>"btn-info"]) }}
+                                </div>
+
+                            </div>
                             <div style="clear:both;height:20px;"></div>
                             <div class="form-group">
                                 <label class="col-sm-1 control-label"
-                                       style="margin-bottom: 0;padding-left:15px">选择消息</label>
-                                <div class="col-sm-8 aselect">
-                                    {{ Form::select('media_id', $mediaskf,['class'=>'form-control selectpicker show-tick','data-style'=>"btn-info"]) }}
-                                </div>
-                                <div class="form-group col-sm-12" style="padding-bottom: 0">
+                                       style="margin-bottom: 20px;"></label>
+                                <div class="col-sm-8 ">
                                     <input type="submit" value="测试群发" name="resubmit"
                                            class="btn btn-primary"/>
                                 </div>
                             </div>
-                        </div>
+                    </div>
                     </div>
                 </form>
             </div>

@@ -41,12 +41,20 @@
                             <label for='tag'>所有用户发送</label>
                             <input type='hidden' name='select' value='users' id='users'>
                             <br>
-                            <div>
-                                <textarea name="text" rows="20" class="form-control"
-                                          placeholder="请输入文字">{{ old('text') }}</textarea>
-                                <input type="submit" value="群发" name="opsubmit" onclick="return confirm('确定要群发?')"
-                                       class="btn btn-primary"/>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="text">
+                                        <div class="form-group col-sm-12" style="padding-left: 0">
+                                                <textarea name="text" rows="20" class="form-control"
+                                                          placeholder="请输入文字">{{ old('text') }}</textarea>
+
+                                        </div>
+                                    </div>
+                                    <input type="submit" value="群发" name="opsubmit"
+                                    class="btn btn-primary"/>
+                                </div>
                             </div>
+
                         </form>
                     </div>
                 </div>
@@ -70,7 +78,7 @@
                                 </div>
                             </div>
                             <div class="form-group col-sm-12" style="padding-left: 0">
-                                <input type="submit" value="群发" name="opsubmit" onclick="return confirm('确定要群发?')"
+                                <input type="submit" value="群发" name="opsubmit"
                                        class="btn btn-primary"/>
                             </div>
                             <style>
@@ -98,11 +106,11 @@
                                     {{ csrf_field()}}
                                     <label class="col-sm-1 control-label" style="margin-bottom: 0;padding-left: 0px;">选择图文</label>
                                     <div class="col-sm-8">
-                                        {{ Form::select('media_id', $medias,['class'=>'form-control selectpicker show-tick ','data-style'=>"btn-info"]) }}
+                                        {{ Form::select('media_id', $medias,"",['class'=>'form-control selectpicker show-tick ','data-style'=>"btn-info"]) }}
                                     </div>
                                 </div>
                                 <div class="form-group col-sm-12" style="padding-bottom: 0;padding-left: 0">
-                                    <input type="submit" value="群发" name="resubmit" onclick="return confirm('确定要群发?')"
+                                    <input type="submit" value="群发" name="resubmit"
                                            class="btn btn-primary"/>
                                 </div>
                             </form>
@@ -170,7 +178,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group col-sm-12" style="padding-bottom: 0">
-                                            <input type="submit" value="群发" onclick="return confirm('确定要群发?')"
+                                            <input type="submit" value="群发"
                                                    name="resubmit"
                                                    class="btn btn-primary"/>
                                         </div>
@@ -203,10 +211,10 @@
                                 <label class="col-sm-1 control-label"
                                        style="margin-bottom: 0;padding-left:15px">选择消息</label>
                                 <div class="col-sm-8 aselect">
-                                    {{ Form::select('media_id', $mediaskf,['class'=>'form-control selectpicker show-tick','data-style'=>"btn-info"]) }}
+                                    {{ Form::select('media_id', $mediaskf,"",['class'=>'form-control selectpicker show-tick','data-style'=>"btn-info"]) }}
                                 </div>
                                 <div class="form-group col-sm-12" style="padding-bottom: 0">
-                                    <input type="submit" value="群发" name="resubmit" onclick="return confirm('确定要群发?')"
+                                    <input type="submit" value="群发" name="resubmit"
                                            class="btn btn-primary"/>
                                 </div>
                             </div>
